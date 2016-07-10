@@ -45,3 +45,24 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+.gradle/2.3/taskArtifacts/cache.properties
+.gradle/2.3/taskArtifacts/cache.properties.lock
+*.bin
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+*.project
+.settings/gradle.prefs
+*.prefs
+build/classes/main/hello/Application.class
+*.class
+build/libs/gs-rest-service-0.1.0.jar
+*.original
+build/reports/tests/classes/hello.GreetingControllerTests.html
+build/reports/tests/css/style.css
+build/reports/tests/index.html
+build/reports/tests/packages/hello.html
+build/tmp/jar/MANIFEST.MF
+build/reports/tests/css/base-style.css
+build/reports/tests/js/report.js
+build/test-results/binary/test/output.bin.idx
+build/test-results/TEST-hello.GreetingControllerTests.xml
