@@ -6,13 +6,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages="com.sosorryservice")
+@ComponentScan(basePackages={"com.sosorryservice.main",
+		"com.sosorryservice.model",
+		"com.sosorryservice.controller",
+		"com.sosorryservice.service",
+		"com.sosorryservice.configuration"})
 @EnableSwagger2
+@EnableMongoRepositories(basePackages="com.sosorryservice.service")
 public class Application implements CommandLineRunner{
 	
 	@Override
