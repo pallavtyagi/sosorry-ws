@@ -13,7 +13,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 
 @Configuration
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringBootServerCodegen", date = "2016-07-16T13:50:38.043Z")
 public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
@@ -32,7 +31,7 @@ public class SwaggerDocumentationConfig {
     public Docket customImplementation(){
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-					.apis(RequestHandlerSelectors.basePackage("io.swagger.api"))
+					.apis(RequestHandlerSelectors.basePackage("com.sosorryservice.controller"))
 					.build()
 				.apiInfo(apiInfo());
     }

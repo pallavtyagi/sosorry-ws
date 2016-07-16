@@ -22,20 +22,15 @@ import io.swagger.annotations.ApiResponses;
 @Controller
 @RequestMapping(value = "/images", produces = {APPLICATION_JSON_VALUE})
 @Api(value = "/images", description = "the images API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringBootServerCodegen", date = "2016-07-16T13:50:38.043Z")
 public class ImagesController {
 
   @ApiOperation(value = "Images list", notes = "This api will provide the list of images. ", response = Image.class, responseContainer = "List")
   @ApiResponses(value = { 
     @ApiResponse(code = 200, message = "An array of images", response = Image.class),
     @ApiResponse(code = 200, message = "Unexpected error", response = Image.class) })
-  @RequestMapping(value = "",
-    produces = { "application/json" }, 
-    
-    method = RequestMethod.GET)
-  public ResponseEntity<List<Image>> imagesGet()
-      throws NotFoundException {
-      // do some magic!
+  @RequestMapping(value = "",produces = { "application/json" }, method = RequestMethod.GET)
+  public ResponseEntity<List<Image>> imagesGet() throws NotFoundException {
+	  
       return new ResponseEntity<List<Image>>(HttpStatus.OK);
   }
 

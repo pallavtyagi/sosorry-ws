@@ -1,0 +1,94 @@
+swagger: '2.0'
+info:
+  title: Sosorry APIs
+  description: sosorry media api
+  version: "1.0.0"
+# the domain of the service
+host: localhost
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /sosorry/v1
+produces:
+  - application/json
+paths:
+  /images:
+    get:
+      summary: Images list
+      description: |
+        This api will provide the list of images.
+      tags:
+        - Images
+      responses:
+        200:
+          description: An array of images
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Image'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /videos:
+    get:
+      summary: Videos list
+      description: |
+        This api will provide the list of Videos.
+      tags:
+        - Videos
+      responses:
+        200:
+          description: An array of videos.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Video'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Image:
+    type: object
+    properties:
+      url:
+        type: string
+        description: Url of the image location
+      thumbnail_url:
+        type: string
+        description: Url of the thumbnail of the image.
+      caption:
+        type: string
+        description: Caption for the thumbnail or image.
+      created_date:
+        type: string
+        format: dateTime
+        description: Creation time of this image entry in the system.
+  Video:
+    type: object
+    properties:
+      url:
+        type: string
+        description: Url of the video location
+      thumbnail_url:
+        type: string
+        description: Url of the thumbnail of the video.
+      caption:
+        type: string
+        description: Caption for the thumbnail or video.
+      created_date:
+        type: string
+        format: dateTime
+        description: Creation time of this image entry in the system.
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
