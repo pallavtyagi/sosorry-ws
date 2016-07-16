@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @ApiModel(description = "")
-public class Image  {
+public class Video  {
   
   private String url = null;
   private String thumbnailUrl = null;
@@ -17,9 +17,9 @@ public class Image  {
   private String createdDate = null;
 
   /**
-   * Url of the image location
+   * Url of the video location
    **/
-  @ApiModelProperty(value = "Url of the image location")
+  @ApiModelProperty(value = "Url of the video location")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -29,9 +29,9 @@ public class Image  {
   }
 
   /**
-   * Url of the thumbnail of the image.
+   * Url of the thumbnail of the video.
    **/
-  @ApiModelProperty(value = "Url of the thumbnail of the image.")
+  @ApiModelProperty(value = "Url of the thumbnail of the video.")
   @JsonProperty("thumbnail_url")
   public String getThumbnailUrl() {
     return thumbnailUrl;
@@ -41,9 +41,9 @@ public class Image  {
   }
 
   /**
-   * Caption for the thumbnail or image.
+   * Caption for the thumbnail or video.
    **/
-  @ApiModelProperty(value = "Caption for the thumbnail or image.")
+  @ApiModelProperty(value = "Caption for the thumbnail or video.")
   @JsonProperty("caption")
   public String getCaption() {
     return caption;
@@ -73,11 +73,11 @@ public class Image  {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Image image = (Image) o;
-    return Objects.equals(url, image.url) &&
-        Objects.equals(thumbnailUrl, image.thumbnailUrl) &&
-        Objects.equals(caption, image.caption) &&
-        Objects.equals(createdDate, image.createdDate);
+    Video video = (Video) o;
+    return Objects.equals(url, video.url) &&
+        Objects.equals(thumbnailUrl, video.thumbnailUrl) &&
+        Objects.equals(caption, video.caption) &&
+        Objects.equals(createdDate, video.createdDate);
   }
 
   @Override
@@ -88,7 +88,7 @@ public class Image  {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Image {\n");
+    sb.append("class Video {\n");
     
     sb.append("  url: ").append(url).append("\n");
     sb.append("  thumbnailUrl: ").append(thumbnailUrl).append("\n");
