@@ -2,6 +2,8 @@ package com.sosorryservice.model;
 
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModel;
@@ -11,6 +13,9 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "")
 public class Image  {
   
+  @Id	
+  private String id;	
+	
   private String url = null;
   private String thumbnailUrl = null;
   private String caption = null;
