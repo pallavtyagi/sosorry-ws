@@ -5,14 +5,19 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sosorryservice.configuration.Validation;
 import com.sosorryservice.exception.NotFoundException;
 import com.sosorryservice.model.Image;
 import com.sosorryservice.service.ImageRepository;
@@ -28,6 +33,10 @@ import io.swagger.annotations.ApiResponses;
 @Api(value = "/images", description = "the images API")
 public class ImagesController {
 
+	@InitBinder
+	protected void initBinder(WebDataBinder binder) {
+	    binder.setValidator(new Validation());
+	}
 	
 	@Autowired
 	private ImageRepository repository;
@@ -47,7 +56,7 @@ public class ImagesController {
     @ApiResponse(code = 200, message = "Response", response = Image.class),
     @ApiResponse(code = 200, message = "Unexpected error", response = Image.class) })
   @RequestMapping(value = "/post", method = RequestMethod.POST)
-  public ResponseEntity<List<Image>> imagesPost(@ApiParam(value = "List of Images" ,required=true ) @RequestBody List<Image> images)
+  public ResponseEntity<List<Image>> imagesPost(@ApiParam(value = "List of Images" ,required=true )@Valid @RequestBody List<Image> images)
   {
 	  for (Image image : images) {
 		repository.save(image);

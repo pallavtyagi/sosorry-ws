@@ -15,8 +15,9 @@ public class Image  {
   
   @Id	
   private String id;	
-	
-  private String url = null;
+
+
+  private String url;
   private String thumbnailUrl = null;
   private String caption = null;
   private String createdDate = null;
@@ -25,7 +26,7 @@ public class Image  {
    * Url of the image location
    **/
   @ApiModelProperty(value = "Url of the image location")
-  @JsonProperty("url")
+  @JsonProperty(value = "url", required= true)
   public String getUrl() {
     return url;
   }
