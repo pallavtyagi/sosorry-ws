@@ -33,10 +33,6 @@ import io.swagger.annotations.ApiResponses;
 @Api(value = "/images", description = "the images API")
 public class ImagesController {
 
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-	    binder.setValidator(new Validation());
-	}
 	
 	@Autowired
 	private ImageRepository repository;
